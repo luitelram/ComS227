@@ -1,0 +1,5 @@
+BE CAREFUL: if you specify the name of a file that already exists, its contents will be destroyed when you create the PrintWriter!
+
+
+
+You've seen how reading text from a file was not very different from reading from System.in. Only the construction of our Scanner changed. Similarly, writing to a text file is not much different from writing to System.out. We use a class called PrintWriter, which has the same methods, such as println and print, as System.out. We can construct an instance of PrintWriter by specifying the file we want to write to.

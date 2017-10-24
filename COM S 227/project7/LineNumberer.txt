@@ -1,0 +1,45 @@
+1 package lab7;
+2 import java.io.File;
+3 
+4 
+5 import java.io.FileNotFoundException;
+6 import java.io.PrintWriter;
+7 import java.util.Scanner;
+8 
+9 public class LineNumberer
+10 {
+11   public static void main(String[] args) throws FileNotFoundException
+12   {
+13 	//  File file = new File("/Users/luitelram/Documents/workspace/project7/src/lab7/LineNumberer.java");
+14 	  
+15 	    Scanner scanner = new Scanner(new File("/Users/luitelram/Documents/workspace/project7/src/lab7/LineNumberer.java"));  
+16     
+17     Scanner in = new Scanner(System.in);
+18     File outFile = new File("LineNumberer.txt");
+19     if (outFile.exists())
+20     {
+21       System.out.print("File already exists, ok to overwrite (y/n)? ");
+22       if (!in.nextLine().startsWith("y"))
+23       {
+24         return;
+25       }
+26     }
+27     
+28     PrintWriter out = new PrintWriter(outFile);
+29     
+30     
+31     int lineCount = 1;
+32 
+33     while (scanner.hasNextLine())
+34     {
+35       String line = scanner.nextLine();
+36       out.print(lineCount + " ");
+37       out.println(line);
+38       lineCount += 1;
+39     }
+40     //hkjhllklkhj
+41     //iohjhkjhkjh
+42     System.out.println("Done");
+43     out.close();
+44   }
+45 }
